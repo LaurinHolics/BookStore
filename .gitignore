@@ -19,6 +19,7 @@ Thumbs.db
 *.cache
 *.ilk
 *.log
+*.class
 [Bb]in
 [Dd]ebug*/
 *.lib
@@ -35,3 +36,4 @@ packages/
 /.settings/org.eclipse.m2e.core.prefs
 /.settings/org.eclipse.jdt.core.prefs
 /.project
+/target/classes/ro/itschool/curs/Main.class
