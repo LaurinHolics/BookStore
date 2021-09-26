@@ -12,7 +12,7 @@ public class Main {
 		Book book = new Book(1, "name100", 100,"author100", 22.2);
 		
 		bookDao.openCurrentSessionwithTransaction();
-		bookDao.persist(book);
+		bookDao.persist(book);		
 		bookDao.closeCurrentSessionwithTransaction();
 		
 	}
