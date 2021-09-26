@@ -37,3 +37,5 @@ packages/
 /.settings/org.eclipse.jdt.core.prefs
 /.project
 /target/classes/ro/itschool/curs/Main.class
+/target/
+/.gitignore
