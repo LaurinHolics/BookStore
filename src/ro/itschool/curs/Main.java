@@ -1,6 +1,7 @@
 package ro.itschool.curs;
 
 import ro.itschool.curs.entity.Book;
+import ro.itschool.curs.entity.Isbn;
 import ro.itschool.curs.entity.PublishingHouse;
 import ro.itschool.curs.service.BookService;
 
@@ -10,7 +11,8 @@ public class Main {
 		
 		BookService bookService = new BookService();
 		PublishingHouse house = new PublishingHouse("house5","house5@mail.com");
-		Book book = new Book(1, "name111" , 100,"author100", 22.2,house);
+		Isbn isbn = new Isbn("123456789asdfg");
+		Book book = new Book("name111" , 100,"author100", 22.2,isbn);
 		bookService.saveBook(book);
 //		book.setAuthor("Timi");
 //		bookService.updateBook(book);
