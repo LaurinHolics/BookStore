@@ -10,10 +10,12 @@ public interface EntityDao<T, Id> {
 	
 	public T findById(Id id);
 	
-	public void deleteT(T entity);
+	public void delete(T entity);
 	
 	public List<T> findAll();
 	
 	public void deleteAll();
+
+	
 	
 }

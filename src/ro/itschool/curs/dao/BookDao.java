@@ -2,14 +2,14 @@ package ro.itschool.curs.dao;
 
 import java.util.List;
 
-import javax.persistence.Id;
-
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import lombok.extern.java.Log;
 import ro.itschool.curs.entity.Book;
 import ro.itschool.curs.util.HibernateUtils;
 
+@Log
 public class BookDao implements EntityDao<Book, Integer>{
 	
 	private Session session;
@@ -43,38 +43,43 @@ public class BookDao implements EntityDao<Book, Integer>{
 
 	@Override
 	public void persist(Book entity) {
+		log.info("Am apelat metoda persist");
 		session.saveOrUpdate(entity);
 		
 	}
 
 	@Override
 	public void update(Book entity) {
+		log.info("Am apelat metoda update");
 		session.saveOrUpdate(entity);
 		
 	}
 
 	@Override
 	public Book findById(Integer id) {
+		log.info("Am apelat metoda findById");
 		return 	session.get(Book.class, id);
 		
 	}
 
+	
 	@Override
-	public void deleteT(Book entity) {
-		// TODO Auto-generated method stub
-		
+	public void delete(Book entity) {
+		log.info("Am apelat metoda delete");
+		session.delete(entity);
 	}
 
 	@Override
 	public List<Book> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("Am apelat metoda findAll");
+		return session.createQuery("from book").list();
+	
 	}
 
 	@Override
 	public void deleteAll() {
-		// TODO Auto-generated method stub
-		
+		log.info("Am apelat metoda deleteAll");
+	  session.createQuery("delete from book").executeUpdate();
 	}
 
 	
