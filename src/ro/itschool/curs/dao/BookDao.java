@@ -10,7 +10,7 @@ import org.hibernate.Transaction;
 import ro.itschool.curs.entity.Book;
 import ro.itschool.curs.util.HibernateUtils;
 
-public class BookDao implements EntityDao<Book, Id>{
+public class BookDao implements EntityDao<Book, Integer>{
 	
 	private Session session;
 
@@ -49,14 +49,14 @@ public class BookDao implements EntityDao<Book, Id>{
 
 	@Override
 	public void update(Book entity) {
-		// TODO Auto-generated method stub
+		session.saveOrUpdate(entity);
 		
 	}
 
 	@Override
-	public Book findById(Id id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Book findById(Integer id) {
+		return 	session.get(Book.class, id);
+		
 	}
 
 	@Override
@@ -76,5 +76,7 @@ public class BookDao implements EntityDao<Book, Id>{
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 
 }
