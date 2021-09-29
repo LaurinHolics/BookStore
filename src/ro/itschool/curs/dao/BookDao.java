@@ -72,14 +72,14 @@ public class BookDao implements EntityDao<Book, Integer>{
 	@Override
 	public List<Book> findAll() {
 		log.info("Am apelat metoda findAll");
-		return session.createQuery("from book").list();
+		return session.createQuery("from Book").list();
 	
 	}
 
 	@Override
 	public void deleteAll() {
 		log.info("Am apelat metoda deleteAll");
-	  session.createQuery("delete from book").executeUpdate();
+	  session.createQuery("delete from Book").executeUpdate();
 	}
 
 	

@@ -1,6 +1,5 @@
 package ro.itschool.curs.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import ro.itschool.curs.dao.BookDao;

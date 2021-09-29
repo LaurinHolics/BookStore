@@ -29,9 +29,6 @@
 
 		<!-- Mapping entities -->
 		<mapping class="ro.itschool.curs.entity.Book" />
-		<mapping class="ro.itschool.curs.entity.PublishingHouse" />
-		<mapping class="ro.itschool.curs.entity.Isbn" />
-		<mapping class="ro.itschool.curs.entity.Author" />
-		<mapping class="ro.itschool.curs.entity.Discount" />
+	
 	</session-factory>
 </hibernate-configuration>
