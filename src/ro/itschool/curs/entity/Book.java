@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -40,15 +42,20 @@ public class Book {
 	private double price;
 	
 	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "isbn_id")
 	private Isbn isbn;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private PublishingHouse publishingHouse;
 
-	public Book(String name, int pages, String author, double price,Isbn isbn) {
+	public Book(String name, int pages, String author, double price,Isbn isbn, PublishingHouse publishingHouse) {
 		super();
 		this.name = name;
 		this.pages = pages;
 		this.author = author;
 		this.price = price;
 		this.isbn = isbn;
+		this.publishingHouse = publishingHouse;
 	}
 
 }

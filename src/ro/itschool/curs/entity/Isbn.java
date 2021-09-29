@@ -26,7 +26,7 @@ public class Isbn {
 	@Column(nullable = false)
 	private String code;
 	
-	@OneToOne(mappedBy = "isbn",cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "isbn")
 	private Book book;
 
 	public Isbn(String code) {
