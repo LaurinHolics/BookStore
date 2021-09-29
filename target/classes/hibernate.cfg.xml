@@ -29,6 +29,7 @@
 
 		<!-- Mapping entities -->
 		<mapping class="ro.itschool.curs.entity.Book" />
+		<mapping class="ro.itschool.curs.entity.PublishingHouse" />
 	
 	</session-factory>
 </hibernate-configuration>
