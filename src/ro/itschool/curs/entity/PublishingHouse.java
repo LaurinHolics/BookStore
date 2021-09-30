@@ -12,13 +12,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
-@ToString
 public class PublishingHouse {
 
 	@Id
