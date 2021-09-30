@@ -31,6 +31,7 @@
 		<mapping class="ro.itschool.curs.entity.Book" />
 		<mapping class="ro.itschool.curs.entity.PublishingHouse" />
 		<mapping class="ro.itschool.curs.entity.Isbn" />
+		<mapping class="ro.itschool.curs.entity.Author" />
 	
 	</session-factory>
 </hibernate-configuration>

@@ -1,12 +1,17 @@
 package ro.itschool.curs.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -36,8 +41,6 @@ public class Book {
 	@Column
 	private int pages;
 	
-	@Column
-	private String author;
 	
 	@Column
 	private double price;
@@ -48,8 +51,11 @@ public class Book {
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	private PublishingHouse publishingHouse;
+	
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Set<Author> author = new HashSet<>();
 
-	public Book(String name, int pages, String author, double price,Isbn isbn, PublishingHouse publishingHouse) {
+	public Book(String name, int pages, Set<Author> author, double price,Isbn isbn, PublishingHouse publishingHouse) {
 		super();
 		this.name = name;
 		this.pages = pages;
