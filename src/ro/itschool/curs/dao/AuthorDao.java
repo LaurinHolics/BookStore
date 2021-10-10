@@ -39,38 +39,38 @@ public class AuthorDao {
 		session.close();
 	}
 
-	@Override
+//	@Override
 	public void persist(Author entity) {
 		log.info("Am apelat metoda persist din AuthorDao");
 		session.save(entity);
 	}
 
-	@Override
+//	@Override
 	public void update(Author entity) {
 		log.info("Am apelat metoda update din AuthorDao");
 		session.update(entity);
 	}
 
-    @Override
+//    @Override
 	public Author findById(Integer id) {
 		log.info("Am apelat metoda find din AuthorDao");
 		return session.get(Author.class, id);
 	}
 
-	@Override
+//	@Override
 	public void delete(Author entity) {
 		log.info("Am apelat metoda delete din AuthorDao");
 		session.delete(entity);
 	}
 
-	@Override
+//	@Override
 	@SuppressWarnings("unchecked")
 	public List<Author> findAll() {
 		log.info("Am apelat metoda findAll din AuthorDao");
 		return session.createQuery("from Author").list();
 	}
 
-	@Override
+//	@Override
 	public void deleteAll() {
 		log.info("Am apelat metoda deleteAll din AuthorDao");
 		session.createQuery("delete from Author").executeUpdate();

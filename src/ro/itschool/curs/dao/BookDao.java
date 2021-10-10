@@ -77,7 +77,7 @@ public class BookDao implements EntityDao<Book, Integer>{
 		log.info("Suntem in metoda filter by price");
 		List<Book> books = session.createQuery("from Book").list();
 		log.info("Am obtinut toate cartile posibile si urmeaza sa le filtram");
-		return books.stream().filter(b -> b.getPrice() < price).collect(Collection.toSet()));
+		return books.stream().filter(b -> b.getPrice() < price).collect(Collectors.toSet());
 	}
 
 	@Override
