@@ -1,41 +1,37 @@
 package ro.itschool.curs.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-public class Isbn {
+@ToString
+public class Discount {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private int id;
 
-	@Column(nullable = false)
-	private String code;
+	@Column
+	private int discount;
 
-	@OneToOne(mappedBy = "isbn")
-	private Book book;
+	@Column
+	private LocalDate startDate;
 
-	public Isbn(String code) {
-		super();
-		this.code = code;
-	}
-
-	@Override
-	public String toString() {
-		return "\n Isbn [id=" + id + ", code=" + code + "] \n\n";
-	}
+	@Column
+	private LocalDate endDate;
 
 }

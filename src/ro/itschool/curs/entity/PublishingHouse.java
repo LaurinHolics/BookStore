@@ -28,21 +28,24 @@ public class PublishingHouse {
 	@Column
 	private int id;
 
-	@Column(nullable = false)
+	@Column
 	private String name;
 
 	@Column
 	private String email;
-	
-	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE},mappedBy = "publishingHouse")
+
+	@OneToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "publishingHouse")
 	private List<Book> books;
-	
-	
 
 	public PublishingHouse(String name, String email) {
 		super();
 		this.name = name;
 		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "\n PublishingHouse [id=" + id + ", name=" + name + ", email=" + email + "]";
 	}
 
 }
